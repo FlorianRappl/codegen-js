@@ -1,0 +1,46 @@
+{
+  "name": "parcel-plugin-codegen",
+  "version": "2.0.0",
+  "description": "A plugin for Parcel (v1) to generate useful modules at bundle-time.",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "author": "Florian Rappl",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/FlorianRappl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlorianRappl/codegen-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FlorianRappl/codegen-js/issues"
+  },
+  "keywords": [
+    "parcel-plugin",
+    "parcel-bundler",
+    "plugin",
+    "bundler",
+    "code",
+    "generation",
+    "module",
+    "generator",
+    "codegen"
+  ],
+  "devDependencies": {
+    "@types/parcel-bundler": "^1.12.1",
+    "codegen-lib": "2.0.0"
+  }
+}

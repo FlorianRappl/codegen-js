@@ -1,0 +1,52 @@
+{
+  "name": "esbuild-codegen-plugin",
+  "version": "2.0.0",
+  "description": "A plugin for esbuild to generate useful modules at bundle-time.",
+  "keywords": [
+    "plugin",
+    "esbuild",
+    "build",
+    "codegen"
+  ],
+  "author": "Florian Rappl",
+  "license": "MIT",
+  "main": "lib/cjs/index.cjs",
+  "module": "lib/esm/index.mjs",
+  "typings": "src/index.ts",
+  "engines": {
+    "node": ">=16.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./lib/esm/index.mjs",
+      "require": "./lib/cjs/index.cjs",
+      "types": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/FlorianRappl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlorianRappl/codegen-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FlorianRappl/codegen-js/issues"
+  },
+  "scripts": {
+    "test": "tsc --noEmit",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "esbuild 'src/index.ts' --sourcemap --bundle --packages=external --platform=node --format=cjs --out-extension:.js=.cjs --outdir=lib/cjs",
+    "build:esm": "esbuild 'src/index.ts' --sourcemap --bundle --packages=external --platform=node --format=esm --out-extension:.js=.mjs --outdir=lib/esm --define:__filename=import.meta.url"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "codegen-lib": "2.0.0"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "codegen-js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "lerna run build"
+  },
+  "repository": "https://github.com/FlorianRappl/codegen-js.git",
+  "author": "Florian Rappl",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^16",
+    "esbuild": "^0.24.0",
+    "lerna": "^8",
+    "typescript": "^5"
+  }
+}

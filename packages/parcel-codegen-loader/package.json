@@ -1,0 +1,44 @@
+{
+  "name": "parcel-codegen-loader",
+  "version": "2.0.0",
+  "description": "A plugin for Webpack (v4 and higher) to generate useful modules at bundle-time.",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Florian Rappl",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/FlorianRappl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlorianRappl/codegen-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FlorianRappl/codegen-js/issues"
+  },
+  "keywords": [
+    "codegen",
+    "webpack",
+    "loader"
+  ],
+  "dependencies": {
+    "loader-utils": "^2.0.0",
+    "schema-utils": "^2.6.5"
+  },
+  "devDependencies": {
+    "codegen-lib": "2.0.0",
+    "webpack": "^4.42.0"
+  }
+}
