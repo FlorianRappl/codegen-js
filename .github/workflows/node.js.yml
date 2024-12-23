@@ -50,6 +50,7 @@ jobs:
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
           preRelease: true
+          dependencies: false
           packagePath: ./packages/vscode-codegen/
           registryUrl: https://open-vsx.org
       - name: Prepublish to Visual Studio Marketplace
@@ -57,6 +58,7 @@ jobs:
         with:
           pat: ${{ secrets.VSCODE_TOKEN }}
           preRelease: true
+          dependencies: false
           packagePath: ./packages/vscode-codegen/
           registryUrl: https://marketplace.visualstudio.com
 
@@ -89,11 +91,13 @@ jobs:
         uses: HaaLeo/publish-vscode-extension@v1
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
+          dependencies: false
           packagePath: ./packages/vscode-codegen/
           registryUrl: https://open-vsx.org
       - name: Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@v1
         with:
           pat: ${{ secrets.VSCODE_TOKEN }}
+          dependencies: false
           packagePath: ./packages/vscode-codegen/
           registryUrl: https://marketplace.visualstudio.com
