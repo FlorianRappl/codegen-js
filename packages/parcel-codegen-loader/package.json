@@ -2,12 +2,14 @@
   "name": "parcel-codegen-loader",
   "version": "2.0.0",
   "description": "A plugin for Webpack (v4 and higher) to generate useful modules at bundle-time.",
+  "source": "src/index.ts",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
     "test": "tsc --noEmit",
-    "build": "npm run build:cjs",
-    "build:cjs": "esbuild 'src/index.ts' --sourcemap --bundle --platform=node --format=cjs --outdir=lib"
+    "build": "npm run build:cjs && npm run build:types",
+    "build:cjs": "esbuild 'src/index.ts' --sourcemap --bundle --platform=node --format=cjs --outdir=lib",
+    "build:types": "tsc --emitDeclarationOnly"
   },
   "author": "Florian Rappl",
   "license": "MIT",
