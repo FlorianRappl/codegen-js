@@ -1,0 +1,73 @@
+name: Build Management
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build packages
+        run: npm run build
+
+  pre_release:
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    if: ${{ github.ref == 'refs/heads/develop' && github.event_name == 'push' }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build packages
+        run: npm run build
+      - name: Publish Preview Version
+        run: npm run ci:prerelease
+        env:
+          BUILD_BUILDID: ${{ github.run_number }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+  release:
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build packages
+        run: npm run build
+      - name: Update Release Date
+        run: npm run ci:version-update
+      - name: Publish Preview Version
+        run: npm run ci:release
+        env:
+          BUILD_BUILDID: ${{ github.run_number }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

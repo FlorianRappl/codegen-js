@@ -5,8 +5,9 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "tsc --noEmit",
+    "build": "npm run build:cjs",
+    "build:cjs": "esbuild 'src/index.ts' --sourcemap --bundle --platform=node --format=cjs --outdir=lib"
   },
   "author": "Florian Rappl",
   "license": "MIT",

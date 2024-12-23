@@ -4,12 +4,11 @@
   </a>
 </div>
 
-[![npm][npm]][npm-url]
-[![node][node]][node-url]
-[![chat][chat]][chat-url]
-[![size][size]][size-url]
-
 # parcel-codegen-loader
+
+[![npm](https://img.shields.io/npm/v/parcel-codegen-loader.svg)](https://www.npmjs.com/package/parcel-codegen-loader)
+[![GitHub tag](https://img.shields.io/github/tag/FlorianRappl/codegen-js.svg)](https://github.com/FlorianRappl/codegen-js/releases)
+[![GitHub issues](https://img.shields.io/github/issues/FlorianRappl/codegen-js.svg)](https://github.com/FlorianRappl/codegen-js/issues)
 
 The `parcel-codegen-loader` resolves `import` / `require()` on a file into a Node.js module that is evaluated during the compilation. It expects the Node.js module to generate a webpack module on the fly establishing meta programming.
 
@@ -101,17 +100,6 @@ import { users } from './remote.codegen';
 
 Contributions in any form are appreciated and much welcome!
 
-Just make sure to post an issue or reach out to me on [Gitter](https://gitter.im/piral-io/community) before starting actual work on anything. It really helps to avoid problems.
-
 ## License
 
-This plugin is released using the MIT license.
-
-[npm]: https://img.shields.io/npm/v/parcel-codegen-loader.svg
-[npm-url]: https://npmjs.com/package/parcel-codegen-loader
-[node]: https://img.shields.io/node/v/parcel-codegen-loader.svg
-[node-url]: https://nodejs.org
-[chat]: https://img.shields.io/badge/gitter-piral.io%2Fcommunity-brightgreen.svg
-[chat-url]: https://gitter.im/piral-io/community
-[size]: https://packagephobia.now.sh/badge?p=parcel-codegen-loader
-[size-url]: https://packagephobia.now.sh/result?p=parcel-codegen-loader
+This plugin is released using the MIT license. For more information see the [LICENSE file](./LICENSE).

@@ -4,7 +4,7 @@ import { createCodegenHost } from 'codegen-lib';
 const codegen = createCodegenHost(process.cwd());
 
 async function compile(name: string, outDir: string, rootDir: string) {
-  const watchFiles = [];
+  const watchFiles: Array<string> = [];
   const contents = await codegen.generate({
     name,
     options: {
@@ -24,19 +24,17 @@ async function compile(name: string, outDir: string, rootDir: string) {
 export default new Transformer({
   async transform({ asset, options }) {
     const outDir = options.projectRoot + '/dist';
-
     const result = await compile(asset.filePath, outDir, options.projectRoot);
 
-    for (const specifier of result.watchFiles) {
+    for (const file of result.watchFiles) {
       asset.addDependency({
-        specifier,
+        specifier: file,
         specifierType: 'esm',
       });
     }
 
-    asset.type = 'js';
-    asset.setCode(result.contents);
-
+    asset.type = result.contents.type;
+    asset.setCode(result.contents.value);
     return [asset];
   },
 });

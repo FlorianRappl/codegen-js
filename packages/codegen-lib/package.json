@@ -9,8 +9,22 @@
   "author": "Florian Rappl",
   "license": "MIT",
   "source": "src/index.ts",
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "main": "lib/cjs/index.cjs",
+  "module": "lib/esm/index.mjs",
+  "typings": "lib/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/esm/index.mjs",
+      "require": "./lib/cjs/index.cjs",
+      "types": "./lib/js/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:cjs": "tsc --outDir lib/cjs --module commonjs",
+    "build:esm": "tsc --outDir lib/esm --module esnext"
+  },
   "engines": {
     "node": ">=16.0"
   },
@@ -29,8 +43,5 @@
     "lib",
     "src"
   ],
-  "scripts": {
-    "build": "tsc"
-  },
   "devDependencies": {}
 }

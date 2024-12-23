@@ -34,7 +34,7 @@ export default async function loader(source: string, map: string, meta: any) {
       addDependency: (file) => this.addDependency(file),
     });
 
-    callback(null, content, map, meta);
+    callback(null, content.value, map, meta);
   } catch (err) {
     callback(err, source);
   }

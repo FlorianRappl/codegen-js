@@ -1,5 +1,9 @@
 # `vite-plugin-codegen`
 
+[![npm](https://img.shields.io/npm/v/vite-plugin-codegen.svg)](https://www.npmjs.com/package/vite-plugin-codegen)
+[![GitHub tag](https://img.shields.io/github/tag/FlorianRappl/codegen-js.svg)](https://github.com/FlorianRappl/codegen-js/releases)
+[![GitHub issues](https://img.shields.io/github/issues/FlorianRappl/codegen-js.svg)](https://github.com/FlorianRappl/codegen-js/issues)
+
 A plugin for `vite` to allow bundle-time asset generation. This can be useful to work efficiently with established conventions and reduce duplication and boilerplate code.
 
 It follows pretty much the [parcel-plugin-codegen](https://www.npmjs.com/package/parcel-plugin-codegen) implementation.
@@ -60,4 +64,4 @@ module.exports = function() {
 
 ## License
 
-This plugin is released using the MIT license. For more information see the [LICENSE file](LICENSE).
+This plugin is released using the MIT license. For more information see the [LICENSE file](./LICENSE).
