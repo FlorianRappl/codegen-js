@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Extension Debugger",
+      "type": "extensionHost",
+      "request": "launch",
+      "runtimeExecutable": "${execPath}/packages/vscode-codegen",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/packages/vscode-codegen"
+      ],
+      "outFiles": [],
+      "stopOnEntry": false,
+      "sourceMaps": true
+    }
+  ]
+}

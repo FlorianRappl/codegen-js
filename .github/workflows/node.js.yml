@@ -45,6 +45,20 @@ jobs:
         env:
           BUILD_BUILDID: ${{ github.run_number }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Prepublish to Open VSX Registry
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.OPEN_VSX_TOKEN }}
+          preRelease: true
+          packagePath: ./packages/vscode-codegen/
+          registryUrl: https://open-vsx.org
+      - name: Prepublish to Visual Studio Marketplace
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.VSCODE_TOKEN }}
+          preRelease: true
+          packagePath: ./packages/vscode-codegen/
+          registryUrl: https://marketplace.visualstudio.com
 
   release:
     runs-on: ubuntu-latest
@@ -71,3 +85,15 @@ jobs:
         env:
           BUILD_BUILDID: ${{ github.run_number }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Publish to Open VSX Registry
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.OPEN_VSX_TOKEN }}
+          packagePath: ./packages/vscode-codegen/
+          registryUrl: https://open-vsx.org
+      - name: Publish to Visual Studio Marketplace
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.VSCODE_TOKEN }}
+          packagePath: ./packages/vscode-codegen/
+          registryUrl: https://marketplace.visualstudio.com

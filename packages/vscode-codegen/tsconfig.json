@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "outDir": "out",
+    "noEmit": true,
+    "lib": [
+      "es6",
+      "DOM"
+    ],
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "rootDir": "src",
+    "jsx": "react",
+    "jsxFactory": "jsx"
+  },
+  "exclude": [
+    "node_modules",
+    ".vscode-test"
+  ]
+}
