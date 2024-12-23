@@ -1,5 +1,6 @@
 import type * as ParcelBundler from 'parcel-bundler';
 
 export = function (bundler: ParcelBundler) {
-  bundler.addAssetType('codegen', require.resolve('./CodeGenAsset'));
+  const name = './CodeGenAsset';
+  bundler.addAssetType('codegen', require.resolve(name));
 };

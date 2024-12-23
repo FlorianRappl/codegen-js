@@ -8,7 +8,7 @@
   "scripts": {
     "test": "tsc --noEmit",
     "build": "npm run build:cjs && npm run build:types",
-    "build:cjs": "esbuild 'src/index.ts' --sourcemap --bundle --platform=node --format=cjs --outdir=lib",
+    "build:cjs": "esbuild 'src/index.ts' --sourcemap --bundle --platform=node --format=cjs --external:loader-utils --external:schema-utils --outdir=lib",
     "build:types": "tsc --emitDeclarationOnly"
   },
   "author": "Florian Rappl",
