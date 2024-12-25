@@ -1,3 +1,5 @@
+import { dirname } from 'path';
+import { readFile } from 'fs/promises';
 import { createRequire } from 'module';
 
 function reloadGenerator(requireModule: any, name: string) {
@@ -7,6 +9,29 @@ function reloadGenerator(requireModule: any, name: string) {
 }
 
 function noop() {}
+
+// This is right now needed as a .codegen file will be
+// reported as having an invalid file extension; so
+// Node.js will refuse to load / evaluate it
+async function dynamicCodegenImport(file: string) {
+  const dir = dirname(file);
+  const text = await readFile(file, 'utf8');
+  const code = replaceRelativeImports(text, dir);
+  const content = Buffer.from(code).toString('base64');
+  const url = `data:text/javascript;base64,${content}`;
+  return await import(url);
+}
+
+// Converts relative paths to absolute paths - only needed for (some) imports
+function replaceRelativeImports(content: string, absoluteBase: string) {
+  const regex = /import\s+([^'"]+)\s+from\s+(['"])\.\/([^'"]+)\2/g;
+
+  // Replace relative imports with absolute imports
+  return content.replace(regex, (_, imports, quote, relativePath) => {
+    const absolutePath = `${absoluteBase}/${relativePath}`;
+    return `import ${imports} from ${quote}file://${absolutePath}${quote}`;
+  });
+}
 
 export interface CodegenDetailsOptions {
   outDir?: string;
@@ -51,7 +76,7 @@ export function createCodegenHost(fileOrDirName: string): CodegenHost {
         case 'cjs':
           return Promise.resolve(reloadGenerator(requireModule, name));
         case 'esm':
-          return import(name).then((result) => result.default || result);
+          return dynamicCodegenImport(name).then((result) => result.default || result);
         case 'auto':
         default:
           if (
