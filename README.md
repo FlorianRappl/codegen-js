@@ -17,7 +17,9 @@ Whether you're using modern bundlers like Webpack, rspack, esbuild, Vite, Rollup
     - [esbuild](https://esbuild.github.io/)
     - [Vite](https://vitejs.dev/)
     - [Rollup](https://rollupjs.org/)
-    - [Parcel](https://parceljs.org/)
+    - [Parcel](https://v1.parceljs.org/)
+    - [Parcel v2](https://parceljs.org/)
+    - [Bun](https://bun.sh/)
   - Enhance bundlers with custom code generation and dynamic content injection.
   
 - **Editor Plugins**:

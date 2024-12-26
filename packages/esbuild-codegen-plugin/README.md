@@ -1,6 +1,6 @@
 # `esbuild-codegen-plugin`
 
-[![npm](https://img.shields.io/npm/v/parcel-codegen-loader.svg)](https://www.npmjs.com/package/esbuild-codegen-plugin)
+[![npm](https://img.shields.io/npm/v/esbuild-codegen-plugin.svg)](https://www.npmjs.com/package/esbuild-codegen-plugin)
 [![GitHub tag](https://img.shields.io/github/tag/FlorianRappl/codegen-js.svg)](https://github.com/FlorianRappl/codegen-js/releases)
 [![GitHub issues](https://img.shields.io/github/issues/FlorianRappl/codegen-js.svg)](https://github.com/FlorianRappl/codegen-js/issues)
 

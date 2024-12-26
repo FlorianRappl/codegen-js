@@ -1,0 +1,46 @@
+{
+  "name": "bun-codegen-loader",
+  "version": "1.0.0",
+  "description": "A plugin for Bun (v1+) to generate useful modules at bundle-time.",
+  "source": "src/index.ts",
+  "module": "lib/index.js",
+  "type": "module",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "test": "tsc --noEmit",
+    "build": "npm run build:esm && npm run build:types",
+    "build:esm": "esbuild 'src/index.ts' --sourcemap --bundle --platform=node --format=esm --outdir=lib",
+    "build:types": "tsc --emitDeclarationOnly"
+  },
+  "author": "Florian Rappl",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/FlorianRappl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlorianRappl/codegen-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FlorianRappl/codegen-js/issues"
+  },
+  "keywords": [
+    "codegen",
+    "bun",
+    "plugin",
+    "loader"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "bun-types": "^1",
+    "codegen-lib": "1.0.0"
+  }
+}
