@@ -1,6 +1,6 @@
 {
   "name": "bun-codegen-loader",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A plugin for Bun (v1+) to generate useful modules at bundle-time.",
   "source": "src/index.ts",
   "main": "lib/cjs/index.cjs",
@@ -47,9 +47,8 @@
     "plugin",
     "loader"
   ],
-  "dependencies": {},
   "devDependencies": {
     "bun-types": "^1",
-    "codegen-lib": "2.0.0"
+    "codegen-lib": "^2.1.0"
   }
 }

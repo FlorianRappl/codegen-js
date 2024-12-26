@@ -1,6 +1,6 @@
 {
   "name": "parcel-codegen-loader",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A plugin for Webpack (v4 and higher) to generate useful modules at bundle-time.",
   "source": "src/index.ts",
   "main": "lib/index.js",
@@ -41,7 +41,7 @@
     "schema-utils": "^2.6.5"
   },
   "devDependencies": {
-    "codegen-lib": "^2.0.0",
+    "codegen-lib": "^2.1.0",
     "webpack": "^5.97.1"
   }
 }

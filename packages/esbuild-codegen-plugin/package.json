@@ -1,6 +1,6 @@
 {
   "name": "esbuild-codegen-plugin",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A plugin for esbuild to generate useful modules at bundle-time.",
   "keywords": [
     "plugin",
@@ -48,6 +48,6 @@
     "build:types": "tsc --emitDeclarationOnly"
   },
   "devDependencies": {
-    "codegen-lib": "^2.0.0"
+    "codegen-lib": "^2.1.0"
   }
 }

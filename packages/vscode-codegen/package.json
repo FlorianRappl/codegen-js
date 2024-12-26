@@ -6,7 +6,7 @@
   "description": "Brings syntax highlighting and snippets for using .codegen files in VS Code.",
   "license": "MIT",
   "icon": "resources/logo.png",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "homepage": "https://github.com/FlorianRappl/codegen-js/blob/main/README.md",
   "repository": {
     "type": "git",
