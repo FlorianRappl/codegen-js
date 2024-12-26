@@ -8,7 +8,7 @@
     "build": "lerna run build",
     "release": "lerna publish",
     "ci:version": "node tools/changelog-version.js",
-    "ci:version-update": "npm run ci:version --update && git add CHANGELOG.md && git commit -m 'Updated Release Date'",
+    "ci:version-update": "npm run ci:version -- --update && git add CHANGELOG.md && git commit -m 'Updated Release Date'",
     "ci:prerelease": "lerna publish $(npm run --silent ci:version)-pre.$BUILD_BUILDID --exact --yes --force-publish --no-git-tag-version --no-push --dist-tag next && git checkout -- .",
     "ci:release": "lerna publish $(npm run --silent ci:version) --yes --force-publish --message '[skip ci] publish %s'"
   },
