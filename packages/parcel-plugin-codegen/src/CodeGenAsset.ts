@@ -31,6 +31,11 @@ class CodeGenAsset extends Asset {
 
   async generate() {
     const value = await codegen.generate({
+      // Parcel v1 only supports CJS - otherwise throws an exception:
+      // "A dynamic import callback was not specified.", see:
+      // https://github.com/parcel-bundler/parcel/issues/8987
+      // (Parcel v2, but the issue exists since v1 and has only been fixed in v2)
+      type: 'cjs',
       name: this.name,
       options: this.options,
     });

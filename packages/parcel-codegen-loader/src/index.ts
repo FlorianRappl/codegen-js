@@ -1,4 +1,4 @@
-import * as validateOptions from 'schema-utils';
+import validateOptions from 'schema-utils';
 import { getOptions } from 'loader-utils';
 import { createCodegenHost } from 'codegen-lib';
 import type { Compiler } from 'webpack';
