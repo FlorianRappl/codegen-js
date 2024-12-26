@@ -1,6 +1,6 @@
 {
   "name": "parcel-plugin-codegen",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A plugin for Parcel (v1) to generate useful modules at bundle-time.",
   "source": "src/index.ts",
   "main": "lib/index.js",
@@ -44,6 +44,6 @@
   ],
   "devDependencies": {
     "@types/parcel-bundler": "^1.12.1",
-    "codegen-lib": "1.0.0"
+    "codegen-lib": "^2.0.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "esbuild-codegen-plugin",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A plugin for esbuild to generate useful modules at bundle-time.",
   "keywords": [
     "plugin",
@@ -47,8 +47,7 @@
     "build:esm": "esbuild 'src/index.ts' --sourcemap --bundle --platform=node --format=esm --out-extension:.js=.mjs --outdir=lib/esm",
     "build:types": "tsc --emitDeclarationOnly"
   },
-  "dependencies": {},
   "devDependencies": {
-    "codegen-lib": "1.0.0"
+    "codegen-lib": "^2.0.0"
   }
 }
