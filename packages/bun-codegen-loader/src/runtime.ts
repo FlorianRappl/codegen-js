@@ -1,6 +1,6 @@
 import type { BunPlugin } from 'bun';
 
-export function bunPlugin(): BunPlugin {
+export function runtimePlugin(): BunPlugin {
   return {
     name: 'codegen',
     async setup(build) {

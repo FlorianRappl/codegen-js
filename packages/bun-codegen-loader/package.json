@@ -3,19 +3,28 @@
   "version": "2.0.0",
   "description": "A plugin for Bun (v1+) to generate useful modules at bundle-time.",
   "source": "src/index.ts",
-  "module": "lib/index.js",
-  "type": "module",
+  "main": "lib/cjs/index.cjs",
+  "module": "lib/esm/index.mjs",
   "typings": "lib/index.d.ts",
   "scripts": {
     "test": "tsc --noEmit",
-    "build": "npm run build:esm && npm run build:types",
-    "build:esm": "esbuild 'src/index.ts' --sourcemap --bundle --platform=node --format=esm --outdir=lib",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:types",
+    "build:cjs": "esbuild 'src/index.ts' --sourcemap --bundle --platform=node --format=cjs --out-extension:.js=.cjs --outdir=lib/cjs",
+    "build:esm": "esbuild 'src/index.ts' --sourcemap --bundle --platform=node --format=esm --out-extension:.js=.mjs --outdir=lib/esm",
     "build:types": "tsc --emitDeclarationOnly"
   },
   "author": "Florian Rappl",
   "license": "MIT",
   "engines": {
     "node": ">=16.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/esm/index.mjs",
+      "require": "./lib/cjs/index.cjs"
+    },
+    "./package.json": "./package.json"
   },
   "files": [
     "lib",

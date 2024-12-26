@@ -8,7 +8,7 @@ export interface CodegenPluginOptions {
 
 const defaultOptions: CodegenPluginOptions = { rootDir: process.cwd() };
 
-export function loader(options = defaultOptions): BunPlugin {
+export function bundlerPlugin(options = defaultOptions): BunPlugin {
   return {
     name: 'codegen-loader',
     setup(build) {
