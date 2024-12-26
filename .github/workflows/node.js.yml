@@ -80,9 +80,13 @@ jobs:
         run: npm ci
       - name: Build packages
         run: npm run build
+      - name: Set up git
+        run: |
+          git config --global user.email "mail@florian-rappl.de"
+          git config --global user.name "Florian Rappl"
       - name: Update Release Date
         run: npm run ci:version-update
-      - name: Publish Preview Version
+      - name: Publish Release Version
         run: npm run ci:release
         env:
           BUILD_BUILDID: ${{ github.run_number }}
