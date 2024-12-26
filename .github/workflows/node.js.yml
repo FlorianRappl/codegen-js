@@ -45,6 +45,8 @@ jobs:
         env:
           BUILD_BUILDID: ${{ github.run_number }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Change VS Code Version
+        run: npm run ci:vsc-version -- ${{ github.run_number }}
       - name: Prepublish to Open VSX Registry
         uses: HaaLeo/publish-vscode-extension@v1
         with:
