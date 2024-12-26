@@ -1,66 +1,65 @@
 {
-    "name": "vscode-codegen",
-    "private": true,
-    "publisher": "FlorianRappl",
-    "displayName": "codegen-js",
-    "description": "Brings syntax highlighting and snippets for using .codegen files in VS Code.",
-    "license": "MIT",
-    "icon": "resources/logo.png",
-    "version": "1.0.0",
-    "homepage": "https://github.com/FlorianRappl/codegen-js/blob/main/README.md",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/FlorianRappl/codegen-js"
-    },
-    "bugs": {
-      "url": "https://github.com/FlorianRappl/codegen-js/issues",
-      "email": "mail@florian-rappl.de"
-    },
-    "galleryBanner": {
-      "color": "#56aa1c",
-      "theme": "dark"
-    },
-    "engines": {
-      "vscode": "^1.63.0"
-    },
-    "keywords": [
-      "codegen",
-      "javascript",
-      "bundler",
-      "generate-code",
-      "webapp",
-      "webdev"
-    ],
-    "categories": [
-      "Snippets",
-      "Linters"
-    ],
-    "extensionKind": [
-      "ui",
-      "workspace"
-    ],
-    "activationEvents": [
-      "workspaceContains:**/*.codegen"
-    ],
-    "main": "./src/index",
-    "contributes": {
-      "languages": [
-        {
-          "id": "javascript",
-          "extensions": [
-            ".codegen"
-          ]
-        }
-      ]
-    },
-    "pricing": "Free",
-    "sponsor": {
-      "url": "https://github.com/sponsors/FlorianRappl"
-    },
-    "scripts": {},
-    "dependencies": {},
-    "devDependencies": {
-      "@types/vscode": "1.63.1",
-      "@vscode/vsce": "2.22.0"
-    }
+  "name": "vscode-codegen",
+  "private": true,
+  "publisher": "FlorianRappl",
+  "displayName": "codegen-js",
+  "description": "Brings syntax highlighting and snippets for using .codegen files in VS Code.",
+  "license": "MIT",
+  "icon": "resources/logo.png",
+  "version": "2.0.0",
+  "homepage": "https://github.com/FlorianRappl/codegen-js/blob/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FlorianRappl/codegen-js"
+  },
+  "bugs": {
+    "url": "https://github.com/FlorianRappl/codegen-js/issues",
+    "email": "mail@florian-rappl.de"
+  },
+  "galleryBanner": {
+    "color": "#56aa1c",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.63.0"
+  },
+  "keywords": [
+    "codegen",
+    "javascript",
+    "bundler",
+    "generate-code",
+    "webapp",
+    "webdev"
+  ],
+  "categories": [
+    "Snippets",
+    "Linters"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/*.codegen"
+  ],
+  "main": "./src/index",
+  "contributes": {
+    "languages": [
+      {
+        "id": "javascript",
+        "extensions": [
+          ".codegen"
+        ]
+      }
+    ]
+  },
+  "pricing": "Free",
+  "sponsor": {
+    "url": "https://github.com/sponsors/FlorianRappl"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "@types/vscode": "1.63.1",
+    "@vscode/vsce": "2.22.0"
   }
+}
