@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.0 (tbd)
+## 2.1.0 (December 26, 2024)
 
 - Fixed issue in `parcel-codegen-loader`
 - Added `bun-codegen-loader` package
